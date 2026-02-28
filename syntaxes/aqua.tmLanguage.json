@@ -1,0 +1,281 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Aqua",
+	"scopeName": "source.aqua",
+	"patterns": [
+		{
+			"name": "comment.block.aqua",
+			"begin": "#-",
+			"end": "-#"
+		},
+		{
+			"name": "comment.line.number-sign.aqua",
+			"match": "#.*$"
+		},
+		{
+			"name": "constant.numeric.decimal.aqua",
+			"match": "\\b[0-9][0-9_]*(\\.[0-9_]+)?\\b"
+		},
+		{
+			"name": "constant.numeric.binary.aqua",
+			"match": "\\b0b[01][01_]*(\\.[01_]+)?\\b"
+		},
+		{
+			"name": "constant.numeric.octal.aqua",
+			"match": "\\b0o[0-7][0-7_]*(\\.[0-7_]+)?\\b"
+		},
+		{
+			"name": "constant.numeric.hexadecimal.aqua",
+			"match": "\\b0x[0-9a-fA-F][0-9a-fA-F_]*(\\.[0-9a-fA-F_]+)?\\b"
+		},
+		{
+			"name": "string.quoted.double.aqua",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"include": "#interpolation"
+				},
+				{
+					"include": "#stringEscape"
+				}
+			]
+		},
+		{
+			"name": "string.quoted.other.aqua",
+			"begin": "`",
+			"end": "`",
+			"patterns": [
+				{
+					"include": "#stringEscape"
+				}
+			]
+		},
+		{
+			"name": "storage.type.sub.aqua",
+			"begin": "\\bsub\\b",
+			"end": "\\bwith\\b",
+			"patterns": [
+				{
+					"include": "$self"
+				}
+			]
+		},
+		{
+			"name": "storage.type.sub.aqua",
+			"match": "\\bsub\\b"
+		},
+		{
+			"name": "constant.language.true.aqua",
+			"match": "\\btrue\\b"
+		},
+		{
+			"name": "constant.language.false.aqua",
+			"match": "\\bfalse\\b"
+		},
+		{
+			"name": "constant.language.nan.aqua",
+			"match": "\\bnan\\b"
+		},
+		{
+			"name": "constant.language.infinity.aqua",
+			"match": "\\binfinity\\b"
+		},
+		{
+			"name": "constant.language.null.aqua",
+			"match": "\\bnull\\b"
+		},
+		{
+			"name": "variable.language.it.aqua",
+			"match": "\\bit\\b"
+		},
+		{
+			"name": "storage.type.mod.aqua",
+			"begin": "\\bmod\\b",
+			"end": "\\bexport\\b",
+			"patterns": [
+				{
+					"include": "$self"
+				}
+			]
+		},
+		{
+			"name": "storage.type.mod.aqua",
+			"match": "\\bexport\\b"
+		},
+		{
+			"name": "keyword.control.for.aqua",
+			"begin": "\\bfor\\b",
+			"end": "\\bin\\b",
+			"patterns": [
+				{
+					"include": "$self"
+				}
+			]
+		},
+		{
+			"name": "keyword.control.block.aqua",
+			"match": "\\bbegin|end|catch|if|elif|else|while|repeat|until|switch|case|default|using\\b"
+		},
+		{
+			"name": "keyword.control.signal.aqua",
+			"match": "\\breturn|raise|break|continue\\b"
+		},
+		{
+			"name": "keyword.control.enum.aqua",
+			"match": "\\enum\\b"
+		},
+		{
+			"name": "storage.type.let.aqua",
+			"match": "\\blet\\b"
+		},
+		{
+			"include": "#operatorTextual"
+		},
+		{
+			"name": "meta.member.aqua",
+			"match": "(\\?)?\\.(~|>)?\\s*([\\p{L}_][\\p{L}\\p{N}_]*)\\b",
+			"captures": {
+				"1": {
+					"name": "keyword.operator.member.aqua"
+				},
+				"2": {
+					"name": "variable.other.property.aqua"
+				}
+			}
+		},
+		{
+			"match": "\\b([\\p{L}_][\\p{L}\\p{N}_]*)\\s*(\\()",
+			"captures": {
+				"1": {
+					"name": "entity.name.function.call.aqua"
+				},
+				"2": {
+					"name": "punctuation.parenthesis.aqua"
+				}
+			}
+		},
+		{
+			"include": "#identifier"
+		},
+		{
+			"include": "#operatorArithmetic"
+		},
+		{
+			"include": "#operatorAssignment"
+		},
+		{
+			"include": "#operatorComparison"
+		},
+		{
+			"include": "#operatorBitwise"
+		},
+		{
+			"include": "#operatorLogical"
+		},
+		{
+			"include": "#operatorMember"
+		},
+		{
+			"include": "#operatorBind"
+		},
+		{
+			"include": "#operatorClone"
+		},
+		{
+			"include": "#punctuationSeparator"
+		},
+		{
+			"include": "#brackets"
+		}
+	],
+	"repository": {
+		"identifier": {
+			"name": "variable.other.local.aqua",
+			"match": "\\b[\\p{L}_][\\p{L}\\p{N}_]*\\b"
+		},
+		"stringEscape": {
+			"name": "constant.character.escape.aqua",
+			"match": "\\\\."
+		},
+		"interpolation": {
+			"begin": "(@\\{)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.section.embedded.begin.aqua"
+				}
+			},
+			"end": "(?<!\\\\)(\\})",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.section.embedded.end.aqua"
+				}
+			},
+			"name": "meta.interpolation.aqua",
+			"patterns": [
+				{
+					"include": "#stringEscapeInInterpolation"
+				},
+				{
+					"include": "$self"
+				}
+			]
+		},
+		"operatorArithmetic": {
+			"name": "keyword.operator.arithmetic.aqua",
+			"match": "\\+\\+|\\-\\-|\\+|\\-|\\*|\\/|%|//"
+		},
+		"operatorAssignment": {
+			"name": "keyword.operator.assignment.aqua",
+			"match": "="
+		},
+		"operatorComparison": {
+			"name": "keyword.operator.comparison.aqua",
+			"match": "==|~=|>=|<=|>|<"
+		},
+		"operatorBitwise": {
+			"name": "keyword.operator.bitwise.aqua",
+			"match": "<<|>>"
+		},
+		"operatorLogical": {
+			"name": "keyword.operator.logical.aqua",
+			"match": "\\?\\?|:"
+		},
+		"operatorMember": {
+			"name": "keyword.operator.member.aqua",
+			"match": "(\\?)?\\.(~|>)?"
+		},
+		"operatorClone": {
+			"name": "keyword.operator.clone.aqua",
+			"match": "&|\\$"
+		},
+		"operatorBind": {
+			"name": "keyword.operator.bind.aqua",
+			"match": "->"
+		},
+		"operatorTextual": {
+			"name": "keyword.operator.textual.aqua",
+			"match": "\\bin|or|and|xor|not|typeof|in\\b"
+		},
+		"punctuationSeparator": {
+			"name": "punctuation.separator.aqua",
+			"match": ","
+		},
+		"brackets": {
+			"patterns": [
+				{
+					"name": "punctuation.parenthesis.aqua",
+					"match": "\\(|\\)"
+				},
+				{
+					"name": "punctuation.brace.aqua",
+					"match": "\\{|\\}"
+				},
+				{
+					"name": "punctuation.square.aqua",
+					"match": "\\[|\\]"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,90 @@
+{
+    "comments": {
+        "lineComment": {
+            "comment": "#"
+        },
+        "blockComment": [
+            "#-",
+            "-#"
+        ]
+    },
+    "brackets": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ]
+    ],
+    "autoClosingPairs": [
+        {
+            "open": "#-",
+            "close": "-#"
+        },
+        {
+            "open": "(",
+            "close": ")"
+        },
+        {
+            "open": "[",
+            "close": "]"
+        },
+        {
+            "open": "{",
+            "close": "}"
+        },
+        {
+            "open": "\"",
+            "close": "\"",
+            "notIn": [
+                "string"
+            ]
+        },
+        {
+            "open": "`",
+            "close": "`",
+            "notIn": [
+                "string"
+            ]
+        }
+    ],
+    "surroundingPairs": [
+        {
+            "open": "(",
+            "close": ")"
+        },
+        {
+            "open": "[",
+            "close": "]"
+        },
+        {
+            "open": "{",
+            "close": "}"
+        },
+        {
+            "open": "\"",
+            "close": "\""
+        },
+        {
+            "open": "`",
+            "close": "`"
+        }
+    ],
+    "indentationRules": {
+        "increaseIndentPattern": "^\\s*(catch|begin|if|elif|else|for|while|repeat|case|default|using|sub|mod)\\b",
+        "decreaseIndentPattern": "^\\s*(end|catch|elif|else|until|case|default|with|export)\\b"
+    },
+    "folding": {
+        "markers": {
+            "start": "^\\s*(catch|begin|if|elif|else|for|while|repeat|switch|case|default|using|sub|mod)\\b",
+            "end": "^\\s*(end|catch|elif|else|until|case|default|with|export)\\b"
+        }
+    },
+    "wordPattern": "[\\p{L}_][\\p{L}\\p{N}_]*"
+}

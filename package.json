@@ -1,0 +1,26 @@
+{
+  "name": "aqua-aq",
+  "displayName": "Aqua Syntax",
+  "license":"GPL-3.0-only",
+  "description": "Simple language support for the aqua programming language (official)",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.109.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "aqua",
+      "aliases": ["Aqua", "aqua"],
+      "extensions": [".aq"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "aqua",
+      "scopeName": "source.aqua",
+      "path": "./syntaxes/aqua.tmLanguage.json"
+    }]
+  }
+}
