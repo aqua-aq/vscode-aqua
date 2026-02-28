@@ -3,7 +3,13 @@
   "displayName": "Aqua Syntax",
   "license":"GPL-3.0-only",
   "description": "Simple language support for the aqua programming language (official)",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "publisher": "aqua-aq",
+  "author": {
+    "email": "vandi.kond37@gmail.com",
+    "name": "Lev (Leo) Kondukov aka Barrel, DiceBarrel, Vandi"
+  },
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.109.0"
   },
