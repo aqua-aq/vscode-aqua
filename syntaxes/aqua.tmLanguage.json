@@ -130,6 +130,14 @@
 			"match": "\\blet\\b"
 		},
 		{
+			"name": "keywords.other.as.aqua",
+			"match": "\\bas\\b"
+		},
+		{
+			"name":"keyword.other.import.aqua",
+			"match": "\\bimport\\b"
+		},
+		{
 			"include": "#operatorTextual"
 		},
 		{
