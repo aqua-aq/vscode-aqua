@@ -3,7 +3,7 @@
   "displayName": "Aqua Syntax",
   "license":"GPL-3.0-only",
   "description": "Simple language support for the aqua programming language (official)",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "publisher": "aqua-aq",
   "author": {
     "email": "vandi.kond37@gmail.com",
