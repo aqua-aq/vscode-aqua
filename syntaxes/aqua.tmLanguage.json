@@ -83,7 +83,7 @@
 		},
 		{
 			"name": "constant.language.null.aqua",
-			"match": "\\bnull\\b"
+			"match": "\\b(null|_)\\b"
 		},
 		{
 			"name": "variable.language.it.aqua",
@@ -115,11 +115,11 @@
 		},
 		{
 			"name": "keyword.control.block.aqua",
-			"match": "\\bbegin|end|catch|if|elif|else|while|repeat|until|switch|case|default|using\\b"
+			"match": "\\b(begin|end|catch|if|elif|else|while|repeat|until|switch|case|default|using)\\b"
 		},
 		{
 			"name": "keyword.control.signal.aqua",
-			"match": "\\breturn|raise|break|continue\\b"
+			"match": "\\b(return|raise|break|continue)\\b"
 		},
 		{
 			"name": "keyword.control.enum.aqua",
@@ -263,7 +263,7 @@
 		},
 		"operatorTextual": {
 			"name": "keyword.operator.textual.aqua",
-			"match": "\\bin|or|and|xor|not|typeof|in\\b"
+			"match": "\\b(in|or|and|xor|not|typeof|in)\\b"
 		},
 		"punctuationSeparator": {
 			"name": "punctuation.separator.aqua",
