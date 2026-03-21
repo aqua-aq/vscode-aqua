@@ -263,7 +263,7 @@
 		},
 		"operatorTextual": {
 			"name": "keyword.operator.textual.aqua",
-			"match": "\\b(in|or|and|xor|not|typeof|new|in|)\\b"
+			"match": "\\b(in|or|and|xor|not|typeof|new|in)\\b"
 		},
 		"punctuationSeparator": {
 			"name": "punctuation.separator.aqua",
